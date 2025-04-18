@@ -6,8 +6,10 @@ metadata:
   labels:
     app: swiggy-app
 spec:
-  - port: 81
-    targetPort: 81
-    nodePort: 30007
+  type: NodePort   # You need this if you’re using nodePort!
   selector:
     app: swiggy-app
+  ports:
+    - port: 81
+      targetPort: 81
+      nodePort: 30007
